@@ -1,11 +1,11 @@
 import React from 'react';
 import {useState} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import SignupForm from '/src/components/auth/SignupForm.jsx'; 
-import Landing from '/src/components/Landing'; 
-import Dashboard from '/src/components/Dashboard'; 
-import Navbar from '/Users/kelly/code/Projects/watchlistapp/front-end/src/components/ui/Navbar.jsx';
-
+import SignupForm from './src/components/auth/SignupForm.jsx'; 
+import Landing from './src/components/Landing'; 
+import Dashboard from './src/components/Dashboard'; 
+import Navbar from './src/components/Navbar.jsx';
+import Login from './src/components/auth/Login'; 
 //import apiRoutes from '/Users/kelly/code/Projects/watchlistapp/back-end/routes/apiRoutes.js';
 
 
@@ -31,7 +31,8 @@ const App = () => {
       :
        <Route path ='/' element= {<Landing />} />
       }
-<Route path= '/signup' element = {<SignupForm setUser= {setUser} />} /> 
+    <Route path= '/signup' element={<SignupForm setUser={setUser} />} /> 
+    <Route path= '/login' element={<Login setUser={setUser} />} /> 
      </Routes>
     </Router>
    </>

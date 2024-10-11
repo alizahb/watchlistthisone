@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import * as authService from '/Users/kelly/code/Projects/watchlistapp-/backend/services/authService.js'; 
+import * as authService from '../../services/authService.js'; 
 
 const SignupForm = (props) => {
   const navigate = useNavigate();
@@ -28,13 +28,11 @@ const SignupForm = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form data:', formData); 
-    //updateMessage('');
-    //console.log(formData); // this line will print the form data to the console
-  //};
+
   try {
     const newUserResponse= await authService.signup(formData); 
     props.setUser(newUserResponse.user);  
-    navigate('/')
+    navigate('/login')
   } catch (err) {
     console.log('Error during signup:', err.message);
     updateMessage(err.message)

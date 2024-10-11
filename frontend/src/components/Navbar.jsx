@@ -29,7 +29,7 @@ const Navbar = ( {user, /*handleLogout*/} ) => {
               <NavLink to= '/movie-search' style={{color: '#fff',textDecoration: 'none', fontSize:'16px'}}>
               Search Movies
               </NavLink>
-              <NavLink to = '/' onClick = {handleLogout} style={{color: '#fff',textDecoration: 'none', fontSize:'16px'}}>
+              <NavLink to = '/'  style={{color: '#fff',textDecoration: 'none', fontSize:'16px'}}>
               Log Out
               </NavLink>
               </div>

@@ -5,7 +5,7 @@ const BACKEND_URL = 'http://localhost:5000'; // Ensure this is correct
 
 const signup = async (formData) => {
   try {
-    const res = await fetch(`${BACKEND_URL}/api/signup`, {
+    const res = await fetch(`${BACKEND_URL}/auth/api/signup`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
@@ -18,7 +18,7 @@ const signup = async (formData) => {
     
     const json= await res.json(); 
     return json;
-
+    
   } catch (error) {
     console.error('Error signing up:', error.message);
     throw new Error(`Error during signup: ${error.message}`);  
